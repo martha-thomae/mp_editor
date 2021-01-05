@@ -307,6 +307,7 @@ export class ScoreVerovioViewComponent implements OnInit, AfterViewInit {
           break;
       }
       if (output !== null) {
+        output = ScoringUp.PostProcessing.refine_score(output, true, "None");
         ScoringUp.PostProcessing.replace_ligatures_by_brackets(output);
         // ScoringUp.PostProcessing.remove_num_and_numbase(output);
       }
